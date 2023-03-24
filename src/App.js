@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import QRCode from "react-qr-code";
+import { QrScanner } from "@yudiel/react-qr-scanner";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>QR Spike!</h1>
+      <QRCode size={200} bgColor="white" fgColor="black" value="1234" />
+      <QrScanner
+        className="scanner"
+        constraints={{ facingMode: "environment" }}
+        onDecode={(result) => console.log(result)}
+        onError={(error) => console.log(error?.message)}
+      />
     </div>
   );
 }
