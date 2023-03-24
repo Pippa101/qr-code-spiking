@@ -2,8 +2,9 @@
   text-align: center;
 }
 
-.scanner {
+#scanner-container {
   margin: auto;
   width: 200px;
   height: 200px;
+  background-color: aquamarine;
 }
