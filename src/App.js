@@ -6,7 +6,12 @@ function App() {
   return (
     <div className="App">
       <h1>QR Spike!</h1>
-      <QRCode size={200} bgColor="white" fgColor="black" value="1234" />
+      <QRCode
+        size={200}
+        bgColor="white"
+        fgColor="black"
+        value="https://www.wikipedia.org"
+      />
       <div id="scanner-container">
         <QrScanner
           videoStyle={{
@@ -14,7 +19,7 @@ function App() {
           }}
           className="scanner"
           constraints={{ facingMode: "environment" }}
-          onDecode={(result) => console.log(result)}
+          onDecode={(result) => alert(`${result}`)}
           onError={(error) => console.log(error?.message)}
         />
       </div>
